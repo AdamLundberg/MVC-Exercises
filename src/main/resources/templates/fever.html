@@ -6,15 +6,19 @@
         <script defer th:src="@{/webjars/popper.js/umd/popper.min.js}"></script>
         <script defer th:src="@{/webjars/bootstrap/js/bootstrap.min.js}"></script>
         <meta charset="UTF-8">
-        <title>Contact</title>
+        <title>Fever</title>
     </head>
     <body>
         <div class="container">
             <form method="post">
-                <label>Name</label>
-                <input class="form-control" id="name" name="name">
+                <input class="form-control" id="feverInput" name="feverInput" type="number">
                 <input class="btn btn-sm btn-primary" type="submit">
             </form>
+            <table class="table">
+                <tr th:each="name : ${fever}">
+                    <td th:text="${name}"></td>
+                </tr>
+            </table>
         </div>
     </body>
 </html>
